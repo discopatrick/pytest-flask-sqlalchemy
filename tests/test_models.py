@@ -1,5 +1,9 @@
 from flaskapp.models import Thing
 
+# Both of the tests below should assert the existence of 1 Thing, despite both
+# of them inserting a Thing, because the database should be reset to empty
+# between each test.
+
 
 def test_saving_and_retrieving_a_thing(db_session):
     thing = Thing(name='thing one')
